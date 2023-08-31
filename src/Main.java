@@ -6,6 +6,10 @@ public class Main {
 		Scanner in = new Scanner(System.in);
 		Random r = new Random();
 		
+		
+		
+		//Koodin yläosassa on globaalit muuttujat.
+		
 		int counter = 1;
 		String answerLetters = "";
 		String hint = "yellow fruit";
@@ -19,6 +23,8 @@ public class Main {
 		playerName = in.nextLine();
 		System.out.println("Hello " + playerName + " Are you ready to play the game? (write yes or no, to play bonus game type bonus)");
 		ready = in.nextLine();
+		
+			//Arvauspelin koodi alkaa tästä.
 		
 			if(ready.equals("yes")) {
 				
@@ -52,7 +58,8 @@ public class Main {
 							counter += 1;
 							}
 						else {
-							System.out.println("The right answer is " + rightAns + " You did not guess that on time.");
+							System.out.println("The right answer is " + rightAns + " You did not guess that on time. Game over.");
+							play = false;
 							
 						}
 					}
@@ -67,11 +74,16 @@ public class Main {
 				System.out.println(playerName + " did not want to play\nGame over!");
 			}
 			
-			else if(ready.equals("bonus")) {
+			//Tästä alkaa bonus Lucky 7 pelin koodi.
+			
+			
+			else if(ready.equals("bonus")) 
+			{
 				System.out.println("Now playing bonus game. Press enter to continue");
 				answer = in.nextLine();
 				
-				if(answer.equals("stop")) {
+				if(answer.equals("stop")) 
+				{
 					System.out.println(playerName + " did not want to play\nGame over!");
 				}else {
 					
@@ -81,24 +93,31 @@ public class Main {
 					System.out.println("I will give you 3 numbers. If one or more of them is number 7, you win.\nPress enter to continue.");
 					answer = in.nextLine();
 					
-					while(winNum == false){
+					while(winNum == false)
+					{
 						System.out.println("Here are your numbers:");
 						for(int i = 0; i < 3; i++) {
 							ranNum = r.nextInt(8);
-							if(ranNum == 7) {
+							if(ranNum == 7) 
+							{
 								winNum = true;
 							}
 							System.out.println(ranNum);
 						}
-						if(winNum == true) {
+						if(winNum == true) 
+						{
 							System.out.println("You win! Game over");
-						}else {
+						}
+						else 
+						{
 							System.out.println("No lucky number. Press enter to play again or type stop to stop the game.");
 							answer = in.nextLine();
 							if(answer.equals("stop")) {
 								System.out.println("Game over");
 								winNum = true;
-							}else {
+							}
+							else 
+							{
 								System.out.println("Playing again.");
 							}
 						}
