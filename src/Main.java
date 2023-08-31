@@ -51,14 +51,14 @@ public class Main {
 					
 					else 
 					{
-						if(rightAns.length() >= counter) {
+						if(rightAns.length() > counter) {
 							System.out.println("Wrong answer, here is one letter for you.");
 							answerLetters += rightAns.charAt(counter - 1);
 							System.out.println(answerLetters);
 							counter += 1;
 							}
 						else {
-							System.out.println("The right answer is " + rightAns + " You did not guess that on time. Game over.");
+							System.out.println("The right answer is " + rightAns + ". You did not guess that on time. Game over.");
 							play = false;
 							
 						}
@@ -79,6 +79,11 @@ public class Main {
 			
 			else if(ready.equals("bonus")) 
 			{
+				
+				boolean winNum = false;
+				int ranNum;
+				
+				
 				System.out.println("Now playing bonus game. Press enter to continue");
 				answer = in.nextLine();
 				
@@ -87,8 +92,6 @@ public class Main {
 					System.out.println(playerName + " did not want to play\nGame over!");
 				}else {
 					
-					boolean winNum = false;
-					int ranNum;
 					System.out.println("Welcome to lucky number 7 bonus game");
 					System.out.println("I will give you 3 numbers. If one or more of them is number 7, you win.\nPress enter to continue.");
 					answer = in.nextLine();
