@@ -69,7 +69,7 @@ public class Main {
 				
 			}
 			
-			else if(ready.equals("stop"))
+			else if(ready.equals("no"))
 			{
 				System.out.println(playerName + " did not want to play\nGame over!");
 			}
