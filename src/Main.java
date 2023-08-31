@@ -5,6 +5,7 @@ public class Main {
 		Scanner in = new Scanner(System.in);
 		
 		int counter = 1;
+		String answerLetters = "";
 		String hint = "yellow fruit";
 		String rightAns = "Banana";
 		String answer = "";
@@ -42,8 +43,16 @@ public class Main {
 					
 					else 
 					{
-						System.out.println("Wrong answer, try again.");
-						counter += 1;
+						if(rightAns.length() >= counter) {
+							System.out.println("Wrong answer, here is one letter for you.");
+							answerLetters += rightAns.charAt(counter - 1);
+							System.out.println(answerLetters);
+							counter += 1;
+							}
+						else {
+							System.out.println("The right answer is " + rightAns + " You did not guess that on time.");
+							
+						}
 					}
 					
 					
