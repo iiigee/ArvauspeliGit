@@ -14,7 +14,7 @@ public class Main {
 		
 		System.out.println("Hello and welcome to the game!\nPlease write your player name:");
 		playerName = in.nextLine();
-		System.out.println("Hello " + playerName + " Are you ready to play the game?");
+		System.out.println("Hello " + playerName + " Are you ready to play the game? (write yes or no)");
 		ready = in.nextLine();
 		
 			if(ready.equals("yes")) {
@@ -28,7 +28,7 @@ public class Main {
 					
 					if(answer.equals(rightAns)) 
 					{
-						System.out.println("CORRECT! You did it on your " + counter + ". try!");
+						System.out.println("CORRECT! Congratulations " + playerName + " You did it on your " + counter + ". try!");
 						System.out.println("Game over");
 						play = false;
 					}
@@ -51,9 +51,9 @@ public class Main {
 				
 			}
 			
-			else 
+			else
 			{
-				System.out.println("You did not want to play\nGame over!");
+				System.out.println(playerName + " did not want to play\nGame over!");
 			}
 		
 		
